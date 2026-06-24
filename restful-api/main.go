@@ -5,7 +5,9 @@ import (
 	"net/http"
 	"restful-api/app"
 	"restful-api/controller"
+	"restful-api/exception"
 	"restful-api/helper"
+	"restful-api/middleware"
 	"restful-api/repository"
 	"restful-api/service"
 
@@ -34,9 +36,11 @@ func main() {
 	router.PUT("/api/categories/:categoryId", categoryController.Update)
 	router.DELETE("/api/categories/:categoryId", categoryController.Delete)
 
+	router.PanicHandler = exception.ErrorHandler
+
 	server := http.Server{
 		Addr:    "localhost:8080",
-		Handler: router,
+		Handler: middleware.NewAuthMiddleware(router),
 	}
 
 	err := server.ListenAndServe()

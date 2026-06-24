@@ -3,6 +3,11 @@
 ### Health
 GET {{baseUrl}}/health
 
+### Get all categories (UNAUTHORIZED)
+GET {{baseUrl}}/api/categories
+X-API-Key: RAHASIAaaa
+Accept: application/json
+
 ### Get all categories
 GET {{baseUrl}}/api/categories
 X-API-Key: RAHASIA
@@ -18,8 +23,18 @@ Content-Type: application/json
     "name" : "Food 3"
 }
 
+### Create new category (ERROR)
+POST {{baseUrl}}/api/categories
+X-API-Key: RAHASIA
+Accept: application/json
+Content-Type: application/json
+
+{
+    "nameaaa" : "Food 3"
+}
+
 ### Get category by Id
-GET {{baseUrl}}/api/categories/2
+GET {{baseUrl}}/api/categories/100
 X-API-Key: RAHASIA
 Accept: application/json
 
