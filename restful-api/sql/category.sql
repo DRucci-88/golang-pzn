@@ -5,3 +5,5 @@ CREATE TABLE category(
 ) engine = InnoDB;
 
 SELECT * FROM category;
+
+DESC category;
