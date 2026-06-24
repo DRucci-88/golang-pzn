@@ -26,8 +26,8 @@ func (controller *CategoryControllerImpl) Create(writer http.ResponseWriter, req
 
 	categoryResponse := controller.Service.Create(request.Context(), categoryCreateRequest)
 	webResponse := web.WebResponse{
-		Code:   http.StatusCreated,
-		Status: "CREATED",
+		Code:   http.StatusOK,
+		Status: "OK",
 		Data:   categoryResponse,
 	}
 
