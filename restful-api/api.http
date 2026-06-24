@@ -1,0 +1,39 @@
+@baseUrl = http://localhost:8080
+
+### Health
+GET {{baseUrl}}/health
+
+### Get all categories
+GET {{baseUrl}}/api/categories
+X-API-Key: RAHASIA
+Accept: application/json
+
+### Create new category
+POST {{baseUrl}}/api/categories
+X-API-Key: RAHASIA
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name" : "Food 3"
+}
+
+### Get category by Id
+GET {{baseUrl}}/api/categories/2
+X-API-Key: RAHASIA
+Accept: application/json
+
+### Update category by id
+PUT {{baseUrl}}/api/categories/2
+X-API-Key: RAHASIA
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name" : "Fashion"
+}
+
+### Delete category by id
+DELETE {{baseUrl}}/api/categories/2
+X-API-Key: RAHASIA
+Accept: application/json
