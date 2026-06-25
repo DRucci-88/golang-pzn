@@ -13,6 +13,17 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+func NewServer(authMiddleware *middleware.AuthMiddleware) *http.Server {
+	return &http.Server{
+		Addr:    "localhost:8080",
+		Handler: authMiddleware,
+	}
+}
+
+func NewValidator() *validator.Validate {
+	return validator.New()
+}
+
 func main() {
 	db := app.NewDB()
 	validate := validator.New()
